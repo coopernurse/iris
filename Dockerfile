@@ -9,7 +9,7 @@ RUN tar zxf go1.3.3.linux-amd64.tar.gz
 ENV GOROOT /usr/local/go
 ENV GOPATH /usr/local
 
-RUN /usr/local/go/bin/go get github.com/project-iris/iris
+RUN /usr/local/go/bin/go get github.com/coopernurse/iris
 WORKDIR /usr/local/src/github.com/coopernurse/iris
 RUN /usr/local/go/bin/go build -o /usr/local/bin/iris main.go
 
