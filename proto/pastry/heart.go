@@ -25,8 +25,8 @@ import (
 	"math/big"
 	"sync"
 
-	"github.com/project-iris/iris/config"
-	"github.com/project-iris/iris/heart"
+	"github.com/coopernurse/iris/config"
+	"github.com/coopernurse/iris/heart"
 )
 
 // Heartbeat manager and callback handler for the overlay.

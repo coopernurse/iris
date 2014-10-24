@@ -34,8 +34,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/project-iris/iris/config"
-	"github.com/project-iris/iris/gobber"
+	"github.com/coopernurse/iris/config"
+	"github.com/coopernurse/iris/gobber"
 	"gopkg.in/inconshreveable/log15.v2"
 )
 

@@ -30,10 +30,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/project-iris/iris/config"
-	"github.com/project-iris/iris/crypto/sts"
-	"github.com/project-iris/iris/proto"
-	"github.com/project-iris/iris/proto/stream"
+	"github.com/coopernurse/iris/config"
+	"github.com/coopernurse/iris/crypto/sts"
+	"github.com/coopernurse/iris/proto"
+	"github.com/coopernurse/iris/proto/stream"
 )
 
 // Session handshake request multiplexer to choose between the authenticated

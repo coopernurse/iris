@@ -25,7 +25,7 @@ import (
 	"io"
 	"math/big"
 
-	"github.com/project-iris/iris/config"
+	"github.com/coopernurse/iris/config"
 )
 
 var modulo = new(big.Int).SetBit(new(big.Int), config.PastrySpace, 1)

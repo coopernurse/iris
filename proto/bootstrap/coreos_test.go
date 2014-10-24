@@ -23,8 +23,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/project-iris/iris/config"
-	"github.com/project-iris/iris/test/docker"
+	"github.com/coopernurse/iris/config"
+	"github.com/coopernurse/iris/test/docker"
 	"gopkg.in/inconshreveable/log15.v2"
 )
 

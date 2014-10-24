@@ -23,7 +23,7 @@ import (
 	"encoding/gob"
 	"time"
 
-	"github.com/project-iris/iris/proto"
+	"github.com/coopernurse/iris/proto"
 )
 
 // Iris operation code.

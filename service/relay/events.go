@@ -26,8 +26,8 @@ import (
 	"log"
 	"time"
 
-	"github.com/project-iris/iris/config"
-	"github.com/project-iris/iris/proto/iris"
+	"github.com/coopernurse/iris/config"
+	"github.com/coopernurse/iris/proto/iris"
 )
 
 // Forwards a broadcast arriving from the Iris network to the attached binding.

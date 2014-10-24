@@ -30,10 +30,10 @@ import (
 	"sort"
 	"time"
 
-	"github.com/project-iris/iris/config"
-	"github.com/project-iris/iris/proto"
-	"github.com/project-iris/iris/proto/bootstrap"
-	"github.com/project-iris/iris/proto/session"
+	"github.com/coopernurse/iris/config"
+	"github.com/coopernurse/iris/proto"
+	"github.com/coopernurse/iris/proto/bootstrap"
+	"github.com/coopernurse/iris/proto/session"
 )
 
 // The initialization packet when the connection is set up.

@@ -26,7 +26,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/project-iris/iris/proto"
+	"github.com/coopernurse/iris/proto"
 )
 
 // Implements proto.iris.ConnectionCallback.HandlePublish. Extracts the data from

@@ -64,9 +64,9 @@ import (
 	"log"
 	"math/big"
 
-	"github.com/project-iris/iris/proto"
-	"github.com/project-iris/iris/proto/pastry"
-	"github.com/project-iris/iris/proto/scribe/topic"
+	"github.com/coopernurse/iris/proto"
+	"github.com/coopernurse/iris/proto/pastry"
+	"github.com/coopernurse/iris/proto/scribe/topic"
 )
 
 // Implements the pastry.Callback.Deliver method.

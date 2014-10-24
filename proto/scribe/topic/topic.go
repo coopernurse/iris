@@ -26,9 +26,9 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/project-iris/iris/balancer"
-	"github.com/project-iris/iris/ext/sortext"
-	"github.com/project-iris/iris/system"
+	"github.com/coopernurse/iris/balancer"
+	"github.com/coopernurse/iris/ext/sortext"
+	"github.com/coopernurse/iris/system"
 )
 
 // Custom topic error messages

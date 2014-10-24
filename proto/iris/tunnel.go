@@ -31,10 +31,10 @@ import (
 	"time"
 
 	"code.google.com/p/go.crypto/hkdf"
-	"github.com/project-iris/iris/config"
-	"github.com/project-iris/iris/proto"
-	"github.com/project-iris/iris/proto/link"
-	"github.com/project-iris/iris/proto/stream"
+	"github.com/coopernurse/iris/config"
+	"github.com/coopernurse/iris/proto"
+	"github.com/coopernurse/iris/proto/link"
+	"github.com/coopernurse/iris/proto/stream"
 )
 
 // The initialization packet when the tunnel is set up.

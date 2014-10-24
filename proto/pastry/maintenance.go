@@ -31,11 +31,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/project-iris/iris/pool"
+	"github.com/coopernurse/iris/pool"
 
-	"github.com/project-iris/iris/config"
-	"github.com/project-iris/iris/ext/mathext"
-	"github.com/project-iris/iris/ext/sortext"
+	"github.com/coopernurse/iris/config"
+	"github.com/coopernurse/iris/ext/mathext"
+	"github.com/coopernurse/iris/ext/sortext"
 )
 
 // Listens for incoming state merge requests, assembles new routing tables based

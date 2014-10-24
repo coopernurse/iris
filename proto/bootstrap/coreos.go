@@ -30,7 +30,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/project-iris/iris/config"
+	"github.com/coopernurse/iris/config"
 	"gopkg.in/inconshreveable/log15.v2"
 )
 

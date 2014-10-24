@@ -21,7 +21,7 @@ import (
 	"crypto/rand"
 	"fmt"
 
-	"github.com/project-iris/iris/crypto/cyclic"
+	"github.com/coopernurse/iris/crypto/cyclic"
 )
 
 func Example_usage() {

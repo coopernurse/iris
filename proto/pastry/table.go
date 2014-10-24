@@ -22,7 +22,7 @@ package pastry
 import (
 	"math/big"
 
-	"github.com/project-iris/iris/config"
+	"github.com/coopernurse/iris/config"
 )
 
 // Simplified Pastry routing table.

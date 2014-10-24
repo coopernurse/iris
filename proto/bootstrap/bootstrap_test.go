@@ -23,7 +23,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/project-iris/iris/config"
+	"github.com/coopernurse/iris/config"
 )
 
 // Tests that ports are automatically selected from a range if conflicting.

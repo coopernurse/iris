@@ -25,7 +25,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/project-iris/iris/config"
+	"github.com/coopernurse/iris/config"
 )
 
 type spaceTest struct {

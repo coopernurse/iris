@@ -20,7 +20,7 @@ package iris
 import (
 	"time"
 
-	"github.com/project-iris/iris/config"
+	"github.com/coopernurse/iris/config"
 )
 
 // 512 bit RSA key in DER format

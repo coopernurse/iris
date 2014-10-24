@@ -23,7 +23,7 @@ import (
 	"encoding/gob"
 	"math/big"
 
-	"github.com/project-iris/iris/proto"
+	"github.com/coopernurse/iris/proto"
 )
 
 // Pastry operation code type.

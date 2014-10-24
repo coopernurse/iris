@@ -24,8 +24,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/project-iris/iris/config"
-	"github.com/project-iris/iris/ext/mathext"
+	"github.com/coopernurse/iris/config"
+	"github.com/coopernurse/iris/ext/mathext"
 )
 
 func checkRoutes(t *testing.T, nodes []*Overlay) {
@@ -150,62 +150,62 @@ func TestMaintenance(t *testing.T) {
 
 /*
 func TestMaintenanceDOS(t *testing.T) {
-	// Override the overlay configuration
-	swapConfigs()
-	defer swapConfigs()
+    // Override the overlay configuration
+    swapConfigs()
+    defer swapConfigs()
 
-	// Make sure there are enough ports to use (use a huge number to simplify test code)
-	olds := config.BootPorts
-	defer func() { config.BootPorts = olds }()
-	for i := 0; i < 24; i++ {
-		config.BootPorts = append(config.BootPorts, 40000+i)
-	}
-	// Parse encryption key
-	key, _ := x509.ParsePKCS1PrivateKey(privKeyDer)
+    // Make sure there are enough ports to use (use a huge number to simplify test code)
+    olds := config.BootPorts
+    defer func() { config.BootPorts = olds }()
+    for i := 0; i < 24; i++ {
+        config.BootPorts = append(config.BootPorts, 40000+i)
+    }
+    // Parse encryption key
+    key, _ := x509.ParsePKCS1PrivateKey(privKeyDer)
 
-	// Increment the overlays till the test fails
-	for peers := 16; !t.Failed(); peers++ {
-		log.Printf("Live go routines before starting %d peers: %d.", peers, runtime.NumGoroutine())
+    // Increment the overlays till the test fails
+    for peers := 16; !t.Failed(); peers++ {
+        log.Printf("Live go routines before starting %d peers: %d.", peers, runtime.NumGoroutine())
 
-		// Start the batch of nodes
-		nodes := []*Overlay{}
-		boots := new(sync.WaitGroup)
-		for i := 0; i < peers; i++ {
-			nodes = append(nodes, New(appId, key, nil))
-			boots.Add(1)
-			go func(o *Overlay) {
-				defer boots.Done()
-				if _, err := o.Boot(); err != nil {
-					t.Fatalf("failed to boot nodes: %v.", err)
-				}
-			}(nodes[i])
-		}
-		// Wait a while for the handshakes to complete
-		done := time.After(10 * time.Second)
-		for loop := true; loop; {
-			select {
-			case <-done:
-				loop = false
-			case <-time.After(500 * time.Millisecond):
-				log.Printf("Live go routines: %d.", runtime.NumGoroutine())
-			}
-		}
-		// Check the routing tables
-		checkRoutes(t, nodes)
+        // Start the batch of nodes
+        nodes := []*Overlay{}
+        boots := new(sync.WaitGroup)
+        for i := 0; i < peers; i++ {
+            nodes = append(nodes, New(appId, key, nil))
+            boots.Add(1)
+            go func(o *Overlay) {
+                defer boots.Done()
+                if _, err := o.Boot(); err != nil {
+                    t.Fatalf("failed to boot nodes: %v.", err)
+                }
+            }(nodes[i])
+        }
+        // Wait a while for the handshakes to complete
+        done := time.After(10 * time.Second)
+        for loop := true; loop; {
+            select {
+            case <-done:
+                loop = false
+            case <-time.After(500 * time.Millisecond):
+                log.Printf("Live go routines: %d.", runtime.NumGoroutine())
+            }
+        }
+        // Check the routing tables
+        checkRoutes(t, nodes)
 
-		// Make sure boots finished
-		boots.Wait()
+        // Make sure boots finished
+        boots.Wait()
 
-		// Terminate all nodes, irrelevant of their state
-		log.Printf("Shutting down overlays...")
-		for i := 0; i < peers; i++ {
-			nodes[i].Shutdown()
-		}
-		log.Printf("Live go routines after cleanup: %d.", runtime.NumGoroutine())
+        // Terminate all nodes, irrelevant of their state
+        log.Printf("Shutting down overlays...")
+        for i := 0; i < peers; i++ {
+            nodes[i].Shutdown()
+        }
+        log.Printf("Live go routines after cleanup: %d.", runtime.NumGoroutine())
 
-		if runtime.NumGoroutine() > 5 {
-			panic("leaked")
-		}
-	}
+        if runtime.NumGoroutine() > 5 {
+            panic("leaked")
+        }
+    }
 }
 */

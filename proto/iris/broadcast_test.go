@@ -24,7 +24,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/project-iris/iris/config"
+	"github.com/coopernurse/iris/config"
 )
 
 // Connection handler for the broadcast tests.

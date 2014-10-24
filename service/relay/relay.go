@@ -25,9 +25,9 @@ import (
 	"net"
 	"sync"
 
-	"github.com/project-iris/iris/config"
-	"github.com/project-iris/iris/pool"
-	"github.com/project-iris/iris/proto/iris"
+	"github.com/coopernurse/iris/config"
+	"github.com/coopernurse/iris/pool"
+	"github.com/coopernurse/iris/proto/iris"
 )
 
 // Message relay between the local carrier and an attached binding.

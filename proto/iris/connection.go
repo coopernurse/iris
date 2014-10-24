@@ -24,8 +24,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/project-iris/iris/config"
-	"github.com/project-iris/iris/pool"
+	"github.com/coopernurse/iris/config"
+	"github.com/coopernurse/iris/pool"
 )
 
 // Iris specific errors

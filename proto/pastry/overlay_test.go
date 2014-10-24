@@ -22,8 +22,8 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/project-iris/iris/config"
-	"github.com/project-iris/iris/proto"
+	"github.com/coopernurse/iris/config"
+	"github.com/coopernurse/iris/proto"
 )
 
 // 512 bit RSA key in DER format

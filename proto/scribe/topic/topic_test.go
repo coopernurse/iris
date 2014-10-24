@@ -21,7 +21,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/project-iris/iris/ext/sortext"
+	"github.com/coopernurse/iris/ext/sortext"
 )
 
 func TestTopic(t *testing.T) {

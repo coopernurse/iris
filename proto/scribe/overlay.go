@@ -26,11 +26,11 @@ import (
 	"math/big"
 	"sync"
 
-	"github.com/project-iris/iris/config"
-	"github.com/project-iris/iris/heart"
-	"github.com/project-iris/iris/proto"
-	"github.com/project-iris/iris/proto/pastry"
-	"github.com/project-iris/iris/proto/scribe/topic"
+	"github.com/coopernurse/iris/config"
+	"github.com/coopernurse/iris/heart"
+	"github.com/coopernurse/iris/proto"
+	"github.com/coopernurse/iris/proto/pastry"
+	"github.com/coopernurse/iris/proto/scribe/topic"
 )
 
 // Custom topic error messages

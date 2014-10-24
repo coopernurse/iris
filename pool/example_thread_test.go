@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/project-iris/iris/pool"
+	"github.com/coopernurse/iris/pool"
 )
 
 // Usage example for the thread pool.

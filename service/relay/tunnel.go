@@ -22,9 +22,9 @@ import (
 	"log"
 	"sync"
 
-	"github.com/project-iris/iris/config"
-	"github.com/project-iris/iris/container/queue"
-	"github.com/project-iris/iris/proto/iris"
+	"github.com/coopernurse/iris/config"
+	"github.com/coopernurse/iris/container/queue"
+	"github.com/coopernurse/iris/proto/iris"
 )
 
 // Relay tunnel wrapping the real Iris tunnel, adding input and output buffers.

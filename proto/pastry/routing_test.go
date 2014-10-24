@@ -28,8 +28,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/project-iris/iris/config"
-	"github.com/project-iris/iris/proto"
+	"github.com/coopernurse/iris/config"
+	"github.com/coopernurse/iris/proto"
 )
 
 type collector struct {

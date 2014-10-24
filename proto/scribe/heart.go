@@ -24,7 +24,7 @@ import (
 	"log"
 	"math/big"
 
-	"github.com/project-iris/iris/config"
+	"github.com/coopernurse/iris/config"
 )
 
 // Load report between two carrier nodes.

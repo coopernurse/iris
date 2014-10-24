@@ -28,7 +28,7 @@ import (
 	"math/big"
 	"net"
 
-	"github.com/project-iris/iris/proto"
+	"github.com/coopernurse/iris/proto"
 )
 
 // Pastry routing algorithm.
