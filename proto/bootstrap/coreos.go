@@ -122,6 +122,9 @@ func (s *coreOSSeeder) run(sink chan *net.IPAddr, phase *uint32) {
 				}
 			}
 		}
+
+		s.log.Info("peers found from etcd:", peers)
+
 		// If no IPs have been found, log a message and retry after a while
 		if len(peers) == 0 {
 			trials++
@@ -148,10 +151,14 @@ func (s *coreOSSeeder) run(sink chan *net.IPAddr, phase *uint32) {
 				err = fail
 				break
 			}
+
 			// Filter out non-owned IPs
 			if s.ipnet.Contains(addr.IP) {
-				local = append(local, addr)
+				// skipping this for now - if iris is in a container, the
+				// networks won't match
+				s.log.Info("would have excluded peer:", addr)
 			}
+			local = append(local, addr)
 		}
 		if err != nil {
 			continue
