@@ -86,7 +86,10 @@ func (s *coreOSSeeder) run(sink chan *net.IPAddr, phase *uint32) {
 	for trials := 0; err == nil && errc == nil; {
 		// Assemble a list of all possible etcd endpoints
 		endpoints := []string{}
-		for _, ip := range []string{"127.0.0.1", "[::1]"} {
+
+		// See: https://coreos.com/docs/distributed-configuration/getting-started-with-etcd/
+		// We probably want to expose an env variable in case docker0 is not bound to 172.17.42.1
+		for _, ip := range []string{"127.0.0.1", "172.17.42.1", "[::1]"} {
 			for _, port := range config.BootCoreOSPorts {
 				endpoints = append(endpoints, fmt.Sprintf("%s:%d", ip, port))
 			}
