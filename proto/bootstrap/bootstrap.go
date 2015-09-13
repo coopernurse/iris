@@ -1,19 +1,20 @@
 // Iris - Decentralized cloud messaging
 // Copyright (c) 2013 Project Iris. All rights reserved.
 //
-// Iris is dual licensed: you can redistribute it and/or modify it under the
-// terms of the GNU General Public License as published by the Free Software
-// Foundation, either version 3 of the License, or (at your option) any later
-// version.
+// Community license: for open source projects and services, Iris is free to use,
+// redistribute and/or modify under the terms of the GNU Affero General Public
+// License as published by the Free Software Foundation, either version 3, or (at
+// your option) any later version.
 //
-// The framework is distributed in the hope that it will be useful, but WITHOUT
-// ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-// FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
-// more details.
+// Evaluation license: you are free to privately evaluate Iris without adhering
+// to either of the community or commercial licenses for as long as you like,
+// however you are not permitted to publicly release any software or service
+// built on top of it without a valid license.
 //
-// Alternatively, the Iris framework may be used in accordance with the terms
-// and conditions contained in a signed written agreement between you and the
-// author(s).
+// Commercial license: for commercial and/or closed source projects and services,
+// the Iris cloud messaging system may be used in accordance with the terms and
+// conditions contained in an individually negotiated signed written agreement
+// between you and the author(s).
 
 // Package bootstrap is responsible for randomly probing and linearly scanning
 // the local network (single interface) for other running instances.
@@ -103,6 +104,18 @@ func New(ipnet *net.IPNet, magic []byte, owner *big.Int, endpoint int) (*Bootstr
 	gobber := gobber.New()
 	gobber.Init(new(Message))
 
+	// Do some environment dependent IP black magic
+	if detectGoogleComputeEngine() {
+		// Google Compute Engine issues /32 addresses, find real subnet
+		logger.Info("detected GCE, retrieving real netmask")
+		old := ipnet.String()
+		if err := updateIPNet(ipnet); err != nil {
+			logger.Error("failed to retrieve netmask, defaulting", "error", err)
+			ipnet.Mask = ipnet.IP.DefaultMask()
+		}
+		logger.Info("network subnet mask replaced", "old", old, "new", ipnet)
+		logger = log15.New("subsys", "bootstrap", "ipnet", ipnet)
+	}
 	b := &Bootstrapper{
 		ipnet: ipnet,
 		magic: magic,
